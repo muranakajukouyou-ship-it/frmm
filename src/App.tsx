@@ -27,7 +27,7 @@ export default function App() {
         console.error(e);
       }
     }
-    return []; // ← ここを追加して undefined によるクラッシュを防ぎます
+    return [];
   });
 
   // 入力フォームの状態
@@ -161,7 +161,7 @@ export default function App() {
               <textarea
                 value={memo}
                 onChange={(e) => setMemo(e.target.value)}
-                placeholder="自由にメモを残そう..."
+                placeholder="自由にメモを残しよう..."
                 style={styles.textarea}
                 rows={3}
               />
@@ -397,7 +397,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   cardHeader: {
     display: 'flex',
     justifyContent: 'space-between',
-    items: 'center',
+    alignItems: 'center', // 修正済み：items を alignItems に変更
   },
   cardCategory: {
     fontSize: '0.7rem',
